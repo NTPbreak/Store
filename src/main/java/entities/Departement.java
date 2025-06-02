@@ -1,4 +1,4 @@
-package kemzang.store.store.model;
+package entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

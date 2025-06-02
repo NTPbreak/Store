@@ -1,4 +1,4 @@
-package entities;
+package ntp.store.store.entities;
 
 public enum TypePoste {
     CADRE,

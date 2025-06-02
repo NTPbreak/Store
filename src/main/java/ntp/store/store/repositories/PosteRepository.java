@@ -1,7 +1,7 @@
-package repositories;
+package ntp.store.store.repositories;
 
-import entities.Poste;
-import entities.TypePoste;
+import ntp.store.store.entities.Poste;
+import ntp.store.store.entities.TypePoste;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;

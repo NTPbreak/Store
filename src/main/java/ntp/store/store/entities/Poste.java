@@ -1,4 +1,4 @@
-package entities;
+package ntp.store.store.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

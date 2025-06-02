@@ -1,7 +1,7 @@
-package dto;
+package ntp.store.store.dto;
 
 
-import entities.TypePoste;
+import ntp.store.store.entities.TypePoste;
 
 import java.util.UUID;
 

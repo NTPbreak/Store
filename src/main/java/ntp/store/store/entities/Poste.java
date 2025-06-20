@@ -20,21 +20,21 @@ public class Poste {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    @NotBlank(message = "Lelibelléduposteestobligatoire")
+    @NotBlank(message = "Le libellé du poste est obligatoire")
     private TypePoste libellePoste;
 
     @Column(nullable = false)
-    @Min(value = 42000, message = "LesalaireminimumdoitêtreaudessusduSMIG")
+    @Min(value = 42000, message = "Le salaire minimum doit être au dessus du SMIG")
     private Integer salaireMin;
 
     @Column(nullable = false)
-    @Max(value = 1000000, message = "Lesalairemaxestde1million")
+    @Max(value = 1000000, message = "Le salaire max est de 1 million")
     private Integer salaireMax;
     @OneToMany(mappedBy = "poste", cascade = CascadeType.ALL)
     private List<Employe> employes;
 
 
-    @AssertTrue(message = "Lesalairemaximumdoitêtresupérieurausalireminimum")
+    @AssertTrue(message = "Le salaire maximum doit être supérieur au salire minimum")
      public boolean isSalaireValide() {
          //pouréviterNullPointerException
         if (salaireMin == null || salaireMax == null) return true;

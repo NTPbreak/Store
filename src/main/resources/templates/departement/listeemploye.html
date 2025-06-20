@@ -37,7 +37,9 @@
                             <td class="text-start" th:text="${e.nom}"></td>
                             <td class="text-start" th:text="${e.email}"></td>
                             <td class="text-end" th:text="${e.anciennete}"></td>
-                            <td class="text-end" th:text="${#numbers.formatInteger(e.salaire, 3, 'WHITESPACE')} FCFA"></td>
+                            <td class="text-end"
+                                th:text="|${#numbers.formatInteger(e.salaire, 3, 'WHITESPACE')} FCFA|">
+                            </td>
                             <td class="text-start" th:text="${e.poste}"></td>
                             <td class="text-center">
                                 <a class="btn btn-warning btn-sm" href="#" title="Modifier">

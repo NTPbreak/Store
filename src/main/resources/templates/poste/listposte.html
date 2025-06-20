@@ -47,14 +47,39 @@
                                     <i class="fa-solid fa-eye"></i> (<span th:text="${p.getEmployes().size()}"></span>)
                                 </a>
                             </td>
+<!--                            <td class="text-center">-->
+<!--                                <a class="btn btn-warning btn-sm" th:href="@{/poste/edit/{id}(id=${p.id})}" title="Modifier">-->
+<!--                                    <i class="fa-solid fa-pen-nib"></i>-->
+<!--                                </a>-->
+<!--                                <a class="btn btn-danger btn-sm" th:href="@{/poste/delete/{id}(id=${p.id})}" data-bs-target="'#modal' + ${p.id}">-->
+<!--                                    <i class="fa-solid fa-trash"></i>-->
+<!--                                </a>-->
+<!--                                <div class="modal fade text-start" id="'#modal' + ${p.id}" data-bs-backdrop="static">-->
+<!--                                    <div class="modal-dialog" role="document">-->
+<!--                                        <div class="modal-content">-->
+<!--                                            <div class="modal-header">-->
+<!--                                                <h5 class="modal-title">Suppression d'un poste!</h5>-->
+<!--                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                                            </div>-->
+<!--                                            <div class="modal-body">-->
+<!--                                                <p>Supprimer le poste de [[${p.libellePoste}]] ?</p>-->
+<!--                                            </div>-->
+<!--                                            <div class="modal-footer">-->
+<!--                                                <a class="btn btn-danger" th:href="@{/poste/delete/{id}(id=${p.id})}">Confirmer</a>-->
+<!--                                                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Annuler</button>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </td>-->
                             <td class="text-center">
                                 <a class="btn btn-warning btn-sm" th:href="@{/poste/edit/{id}(id=${p.id})}" title="Modifier">
                                     <i class="fa-solid fa-pen-nib"></i>
                                 </a>
-                                <a class="btn btn-danger btn-sm" th:href="@{/poste/delete/{id}(id=${p.id})}" data-bs-target="#modal1">
+                                <a class="btn btn-danger btn-sm" th:data-bs-target="'#modal' + ${p.id}" data-bs-toggle="modal">
                                     <i class="fa-solid fa-trash"></i>
                                 </a>
-                                <div class="modal fade text-start" id="modal1" data-bs-backdrop="static">
+                                <div class="modal fade text-start" th:id="'modal' + ${p.id}" data-bs-backdrop="static">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">

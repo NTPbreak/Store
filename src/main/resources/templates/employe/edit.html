@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{base}">
 <head th:replace="~{base::page_head(titrePage='EMPLOYE UN POSTE')}">
-</head>
+    <title>ji</title></head>
 <body>
 <!-- Inclusion du header -->
 <div layout:fragment="header" th:replace="~{layouts/_header :: header}"></div>
@@ -28,8 +28,10 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="col-sm-2 col-form-label">Nom:</label>
-                            <input type="text" th:field="*{nom}" class="form-control"
-                                   placeholder="EX:TUKOBENEDICTOPACIFO" required>
+                            <label>
+                                <input type="text" th:field="*{nom}" class="form-control"
+                                       placeholder="EX:TUKOBENEDICTOPACIFO" required>
+                            </label>
                             <small id="emailHelp" class="form-text text-muted">
                                 Renseigner le nom de l'employé
                             </small>
@@ -37,9 +39,11 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-sm-2 col-form-label">Email:</label>
-                            <input type="email" th:field="*{email}" class="form-control"
-                                   placeholder="EX:tukobp@caramail.com" required>
-                            <small id="emailHelp" class="form-text text-muted">
+                            <label>
+                                <input type="email" th:field="*{email}" class="form-control"
+                                       placeholder="EX:tukobp@caramail.com" required>
+                            </label>
+                            <small id="emailHelp1" class="form-text text-muted">
                                 Renseigner l'email de l'employé
                             </small>
                             <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></div>
@@ -49,16 +53,18 @@
                         <div class="form-group col-md-6">
                             <label class="col-sm-2 col-form-label">Date d'embauche:</label>
                             <input type="date" th:field="*{dateEmbauche}" class="form-control" required>
-                            <small id="emailHelp" class="form-text text-muted">
+                            <small id="emailHelp2" class="form-text text-muted">
                                 Renseigner la date de recrutement
                             </small>
                             <div th:if="${#fields.hasErrors('dateEmbauche')}" th:errors="*{dateEmbauche}" class="text-danger"></div>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-label mt-4">Salaire</label>
-                            <input type="number" class="form-control" th:field="*{salaire}"
-                                   aria-describedby="prixProduit" placeholder="50000">
-                            <small id="emailHelp" class="form-text text-muted">
+                            <label>
+                                <input type="number" class="form-control" th:field="*{salaire}"
+                                       aria-describedby="prixProduit" placeholder="50000">
+                            </label>
+                            <small id="emailHelp3" class="form-text text-muted">
                                 Salaire que touchera l'employé
                             </small>
                             <div th:if="${#fields.hasErrors('salaire')}" th:errors="*{salaire}" class="text-danger"></div>
@@ -67,29 +73,32 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="col-sm-2 col-form-label">Poste:</label>
-                            <select th:field="*{poste}" name="poste" id="poste"
-                                    th:classappend="${#fields.hasErrors('poste')} ? 'is-invalid'" class="form-control">
+                            <label for="poste"></label><select th:field="*{poste}" name="poste" id="poste"
+                                                               th:classappend="${#fields.hasErrors('poste')} ? 'is-invalid'" class="form-control">
                                 <option value="" disabled>Choisir un poste</option>
+                                <!--/*@thymesVar id="id" type=""*/-->
                                 <option th:each="poste:${postes}"
                                         th:value="${poste.id}" th:text="${poste.libellePoste}"
                                         th:selected="${poste.id == employe.poste?.id}"></option>
                             </select>
-                            <small id="emailHelp" class="form-text text-muted">
+                            <small id="emailHelp4" class="form-text text-muted">
                                 Poste qu'occupera l'employé
                             </small>
                             <div th:if="${#fields.hasErrors('poste')}" th:errors="*{poste}" class="text-danger"></div>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-sm-2 col-form-label">Département:</label>
-                            <select th:field="*{departement}" name="departement" id="departement"
-                                    th:classappend="${#fields.hasErrors('departement')} ? 'is-invalid'" class="form-control">
+                            <label for="departement"></label><select th:field="*{departement}" name="departement" id="departement"
+                                                                     th:classappend="${#fields.hasErrors('departement')} ? 'is-invalid'" class="form-control">
                                 <option value="" disabled>Choisir un département</option>
+                                <!--/*@thymesVar id="id" type=""*/-->
+                                <!--/*@thymesVar id="id" type=""*/-->
                                 <option th:each="departement:${departements}"
                                         th:value="${departement.id}"
                                         th:text="${departement.libelleDepartement}"
                                         th:selected="${departement.id == employe.departement?.id}"></option>
                             </select>
-                            <small id="emailHelp" class="form-text text-muted">
+                            <small id="emailHelp5" class="form-text text-muted">
                                 Département dans lequel l'employé sera affecté
                             </small>
                             <div th:if="${#fields.hasErrors('departement')}" th:errors="*{departement}" class="text-danger"></div>
